@@ -6,9 +6,9 @@ import Footer from "../Components/Footer";
 import { useEffect, useRef, useState } from "react";
 
 interface IPropsRef {
-	aboutMeRef: React.RefObject<HTMLDivElement>,
-	skillsRef: React.RefObject<HTMLDivElement>,
-	projectsRef: React.RefObject<HTMLDivElement>,
+	aboutMeRef?: React.RefObject<HTMLDivElement>,
+	skillsRef?: React.RefObject<HTMLDivElement>,
+	projectsRef?: React.RefObject<HTMLDivElement>,
 }
 
 function Portfolio() {

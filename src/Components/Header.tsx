@@ -1,13 +1,17 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, useAnimation, useViewportScroll } from "framer-motion";
+import { useEffect } from "react";
 
-const Nav = styled.nav`
+const Nav = styled(motion.nav)`
+	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	position: fixed;
+	z-index: 9999;
 `;
 const Col = styled.div`
 	width: 100%;
-	height: 60px;
+	height: 50px;
 	display: flex;
 	align-items: center;
 `;
@@ -43,6 +47,17 @@ interface IPropsRef {
 	projectsRef?: React.RefObject<HTMLDivElement>,
 }
 
+const navVariants = {
+	top: {
+		backgroundColor: "rgba(0, 0, 0, 0)",
+		color: "black"
+	},
+	scroll: {
+		backgroundColor: "rgba(0, 0, 0, 0.8)",
+		color: "white"
+	},
+};
+
 function Header({ aboutMeRef, skillsRef, projectsRef }: IPropsRef) {
 	const onClickAboutMe = () => {
 		aboutMeRef?.current?.scrollIntoView({ behavior: 'smooth' });
@@ -53,8 +68,19 @@ function Header({ aboutMeRef, skillsRef, projectsRef }: IPropsRef) {
 	const onClickProjects = () => {
 		projectsRef?.current?.scrollIntoView({ behavior: 'smooth' });
 	};
+	const navAnimation = useAnimation();
+	const { scrollY } = useViewportScroll();
+	useEffect(() => {
+		scrollY.onChange(() => {
+			if (scrollY.get() > 80) {
+				navAnimation.start("scroll");
+			} else {
+				navAnimation.start("top");
+			}
+		});
+	}, [scrollY, navAnimation]);
 	return (
-		<Nav>
+		<Nav variants={navVariants} animate={navAnimation}>
 			<Col>
 				<Title>Portfolio</Title>
 			</Col>
