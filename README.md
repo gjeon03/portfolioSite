@@ -1,7 +1,8 @@
 # Portfolio Site
 
-- Header[]
+- Header[o]
 - About Me[]
+  - Profile[o]
   - Introduction[]
   - Contact & Channel[]
 - Skills[]

@@ -1,13 +1,17 @@
 import styled from "styled-components";
 import { motion, useAnimation, useViewportScroll } from "framer-motion";
 import { useEffect } from "react";
+import { MaxWidthDiv } from "../Styles/maxWidth";
 
 const Nav = styled(motion.nav)`
 	width: 100%;
+	position: fixed;
+	z-index: 100;
+`;
+const NavArea = styled(MaxWidthDiv)`
+	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	position: fixed;
-	z-index: 9999;
 `;
 const Col = styled.div`
 	width: 100%;
@@ -28,17 +32,6 @@ const Items = styled.ul`
 `;
 const Item = styled.li`
 	cursor: pointer;
-`;
-const LightBox = styled(motion.span)`
-	width: 30px;
-	height: 5px;
-	position: absolute;
-	border-radius: 2.5px;
-	bottom: -7px;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
-	background-color: ${(props) => props.theme.red};
 `;
 
 interface IPropsRef {
@@ -81,25 +74,24 @@ function Header({ aboutMeRef, skillsRef, projectsRef }: IPropsRef) {
 	}, [scrollY, navAnimation]);
 	return (
 		<Nav variants={navVariants} animate={navAnimation}>
-			<Col>
-				<Title>Portfolio</Title>
-			</Col>
-			<Col>
-				<Items>
-					<Item onClick={onClickAboutMe}>
-						About Me
-						<LightBox layoutId="lightBox" />
+			<NavArea>
+				<Col>
+					<Title>Portfolio</Title>
+				</Col>
+				<Col>
+					<Items>
+						<Item onClick={onClickAboutMe}>
+							About Me
 					</Item>
-					<Item onClick={onClickSkills}>
-						Skills
-						<LightBox layoutId="lightBox" />
+						<Item onClick={onClickSkills}>
+							Skills
 					</Item>
-					<Item onClick={onClickProjects}>
-						Projects
-						<LightBox layoutId="lightBox" />
+						<Item onClick={onClickProjects}>
+							Projects
 					</Item>
-				</Items>
-			</Col>
+					</Items>
+				</Col>
+			</NavArea>
 		</Nav>
 	);
 }

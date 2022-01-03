@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,7 +54,7 @@ table {
 }
 body {
   font-weight: 300;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   line-height: 1.2;
 }
 a {
