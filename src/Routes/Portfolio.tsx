@@ -2,6 +2,7 @@ import Header from "../Components/Header";
 import AboutMe from "../Components/AboutMe";
 import Skills from "../Components/Skills";
 import Projects from "../Components/Projects";
+import Footer from "../Components/Footer";
 import { useEffect, useRef, useState } from "react";
 
 interface IPropsRef {
@@ -34,6 +35,7 @@ function Portfolio() {
 			<div ref={projectsRef}>
 				<Projects />
 			</div>
+			<Footer />
 		</>
 	);
 }
