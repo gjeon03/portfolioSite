@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import styled from "styled-components";
 import gjeonImage from "../Images/gjeon.jpg";
 import { MaxWidthDiv } from "../Styles/maxWidth";
+import { CategoryTitle } from "../Styles/title";
 import bgImage from "../Images/bg.jpeg";
 
 const Contaner = styled.div`
@@ -64,15 +65,8 @@ const AboutMeContents = styled(MaxWidthDiv)`
 		padding-bottom: 5px;
 	}
 	span:last-child {
-		padding-bottom: 70px;
+		padding-bottom: 50px;
 	}
-`;
-const CategoryTitle = styled.span`
-	font-family: 'Black Han Sans', sans-serif !important;
-	font-size: 40px;
-	font-weight: 400;
-	border-bottom: 2px solid black;
-	margin-bottom: 10px;
 `;
 const Archiving = styled(MaxWidthDiv)`
 	width: 100%;
@@ -81,7 +75,6 @@ const Archiving = styled(MaxWidthDiv)`
 	background-color: white;
 	display:flex;
 	flex-direction: column;
-	margin-bottom: 70px;
 `;
 const Logs = styled.div`
 	display: flex;

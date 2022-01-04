@@ -16,7 +16,7 @@ const NavArea = styled(MaxWidthDiv)`
 `;
 const Col = styled.div`
 	width: 100%;
-	height: 50px;
+	height: 51px;
 	display: flex;
 	align-items: center;
 `;
