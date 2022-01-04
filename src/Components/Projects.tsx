@@ -6,7 +6,7 @@ const Contaner = styled.div`
 	width: 100%;
 	height: 150vh;
 	padding: 15px 0;
-	background-color: #aaaaaa;
+	background-color: #bfbfbf;
 `;
 const ProjectBox = styled(MaxWidthDiv)`
 	width: 100%;

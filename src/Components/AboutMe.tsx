@@ -60,7 +60,7 @@ const AboutBox = styled.div`
 const AboutMeContents = styled(MaxWidthDiv)`
 	width: 100%;
 	height: auto;
-	padding: 20px;
+	padding: 15px 20px;
 	display:flex;
 	flex-direction: column;
 `;
