@@ -16,7 +16,7 @@ const NavArea = styled(MaxWidthDiv)`
 `;
 const Col = styled.div`
 	width: 100%;
-	height: 51px;
+	height: 50px;
 	display: flex;
 	align-items: center;
 `;
@@ -40,6 +40,7 @@ const Item = styled.li`
 
 interface IPropsRef {
 	aboutMeRef?: React.RefObject<HTMLDivElement>,
+	archivingRef?: React.RefObject<HTMLDivElement>,
 	skillsRef?: React.RefObject<HTMLDivElement>,
 	projectsRef?: React.RefObject<HTMLDivElement>,
 }
@@ -53,9 +54,12 @@ const navVariants = {
 	},
 };
 
-function Header({ aboutMeRef, skillsRef, projectsRef }: IPropsRef) {
+function Header({ aboutMeRef, archivingRef, skillsRef, projectsRef }: IPropsRef) {
 	const onClickAboutMe = () => {
 		aboutMeRef?.current?.scrollIntoView({ behavior: 'smooth' });
+	};
+	const onClickArchiving = () => {
+		archivingRef?.current?.scrollIntoView({ behavior: 'smooth' });
 	};
 	const onClickSkills = () => {
 		skillsRef?.current?.scrollIntoView({ behavior: 'smooth' });
@@ -84,13 +88,16 @@ function Header({ aboutMeRef, skillsRef, projectsRef }: IPropsRef) {
 					<Items>
 						<Item onClick={onClickAboutMe}>
 							About Me
-					</Item>
+						</Item>
+						<Item onClick={onClickArchiving}>
+							Archiving
+						</Item>
 						<Item onClick={onClickSkills}>
 							Skills
-					</Item>
+						</Item>
 						<Item onClick={onClickProjects}>
 							Projects
-					</Item>
+						</Item>
 					</Items>
 				</Col>
 			</NavArea>

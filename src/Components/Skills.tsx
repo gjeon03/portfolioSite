@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { MaxWidthDiv } from "../Styles/maxWidth";
 import { CategoryTitle } from "../Styles/title";
-import { logoImages } from "../Util/logoImage";
+import { logoImages } from "../Util/skillLogo";
 
 const Contaner = styled(motion.div)`
 	width: 100%;
@@ -24,6 +24,7 @@ const SkillItems = styled(motion.div)`
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
 	gap:10px;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.06);
 	div:nth-child(1){
 		padding: 10px;
 	}
@@ -36,7 +37,7 @@ const SkillItem = styled(motion.div)`
 	height: 80px;
 	border-radius: 50%;
 	background-color: white;
-	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.3);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -63,13 +64,6 @@ const LogoInfo = styled(motion.div)`
 	color: white;
 	span {
 		font-weight: 400;
-	}
-`;
-const HeaderSize = styled.div`
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-	div {
-		height: 50px;
 	}
 `;
 
@@ -101,29 +95,26 @@ const infoVariants = {
 
 function Skills() {
 	return (
-		<>
-			<HeaderSize><div /><div /></HeaderSize>
-			<Contaner>
-				<SkillBox>
-					<CategoryTitle>SKILLS</CategoryTitle>
-					<SkillItems>
-						{logoImages.result.map((data, index) =>
-							<SkillItem
-								key={index}
-								whileHover="hover"
-								initial="normal"
-								variants={itemVariants}
-							>
-								<Logo logo={data.url} />
-								<LogoInfo variants={infoVariants}>
-									<span>{data.info}</span>
-								</LogoInfo>
-							</SkillItem>
-						)}
-					</SkillItems>
-				</SkillBox>
-			</Contaner>
-		</>
+		<Contaner>
+			<SkillBox>
+				<CategoryTitle>SKILLS</CategoryTitle>
+				<SkillItems>
+					{logoImages.result.map((data, index) =>
+						<SkillItem
+							key={index}
+							whileHover="hover"
+							initial="normal"
+							variants={itemVariants}
+						>
+							<Logo logo={data.url} />
+							<LogoInfo variants={infoVariants}>
+								<span>{data.info}</span>
+							</LogoInfo>
+						</SkillItem>
+					)}
+				</SkillItems>
+			</SkillBox>
+		</Contaner>
 	);
 }
 
