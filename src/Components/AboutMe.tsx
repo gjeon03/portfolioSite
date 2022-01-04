@@ -70,7 +70,7 @@ const AboutMeInfo = styled.div`
 	height: 100%;
 	border-radius: 20px;
 	padding: 20px;
-	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.06);
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3), 0 7px 15px rgba(0, 0, 0, 0.06);
 	display:flex;
 	flex-direction: column;
 	font-size: 18px;
