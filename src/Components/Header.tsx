@@ -7,6 +7,7 @@ const Nav = styled(motion.nav)`
 	width: 100%;
 	position: fixed;
 	z-index: 100;
+	color: white;
 `;
 const NavArea = styled(MaxWidthDiv)`
 	width: 100%;
@@ -32,6 +33,9 @@ const Items = styled.ul`
 `;
 const Item = styled.li`
 	cursor: pointer;
+	:hover{
+		color: #ce8550;
+	}
 `;
 
 interface IPropsRef {
@@ -43,11 +47,9 @@ interface IPropsRef {
 const navVariants = {
 	top: {
 		backgroundColor: "rgba(0, 0, 0, 0)",
-		color: "black"
 	},
 	scroll: {
-		backgroundColor: "rgba(0, 0, 0, 0.8)",
-		color: "white"
+		backgroundColor: "rgba(61, 49, 42, 0.9)",
 	},
 };
 
@@ -76,7 +78,7 @@ function Header({ aboutMeRef, skillsRef, projectsRef }: IPropsRef) {
 		<Nav variants={navVariants} animate={navAnimation}>
 			<NavArea>
 				<Col>
-					<Title>Portfolio</Title>
+					<Title>JGY's Portfolio</Title>
 				</Col>
 				<Col>
 					<Items>
