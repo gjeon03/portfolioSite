@@ -64,13 +64,13 @@ export const infoVariants = {
 };
 
 interface IProps {
-	key: number,
+	index?: number,
 	url: string,
 	info: string,
 	flag: string,
 }
 
-function Logo({ key, url, info, flag }: IProps) {
+function Logo({ index, url, info, flag }: IProps) {
 	const onItemClick = () => {
 		if (flag === "github") {
 			window.open("https://github.com/gjeon03", "_blank");
@@ -78,7 +78,7 @@ function Logo({ key, url, info, flag }: IProps) {
 	}
 	return (
 		<Item
-			key={key}
+			key={index}
 			whileHover="hover"
 			initial="normal"
 			variants={itemVariants}

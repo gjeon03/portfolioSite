@@ -37,6 +37,7 @@ const ProfileTitle = styled.span`
 	display: flex;
 	flex-direction: column;
 	color: white;
+	font-family: 'IBM Plex Sans KR', sans-serif !important;
 	span:first-child{
 		padding-bottom: 5px;
 	}
@@ -73,6 +74,7 @@ const AboutMeInfo = styled.div`
 	display:flex;
 	flex-direction: column;
 	font-size: 18px;
+	font-family: 'IBM Plex Sans KR', sans-serif !important;
 	span {
 		padding-bottom: 5px;
 	}
@@ -102,9 +104,9 @@ function AboutMe() {
 				<AboutMeContents>
 					<CategoryTitle>ABOUT ME</CategoryTitle>
 					<AboutMeInfo>
-						<span>•트렌드를 추구하고 공유하며, 어제보다 나은 개발자가 되는것이 목표입니다.</span>
-						<span>•항상 왜?에 대해 생각하고 이유를 찾고자합니다.</span>
-						<span>•배움을 멈추지 않으며 저에게 새로운 프로젝트는 또 다른 모험입니다.</span>
+						<span>• 트렌드를 추구하고 공유하며, 어제보다 나은 개발자가 되는것이 목표입니다.</span>
+						<span>• 항상 왜?에 대해 생각하고 이유를 찾고자합니다.</span>
+						<span>• 배움을 멈추지 않으며 저에게 새로운 프로젝트는 또 다른 모험입니다.</span>
 					</AboutMeInfo>
 				</AboutMeContents>
 			</AboutBox>

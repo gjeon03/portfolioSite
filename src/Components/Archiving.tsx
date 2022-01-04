@@ -62,7 +62,6 @@ function Archiving() {
 						</LogoInfo>
 					</Item>
 					<Logo {...{
-						key: 1,
 						url: githubImage,
 						info: "Move on Click",
 						flag: "github"

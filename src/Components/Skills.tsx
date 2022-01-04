@@ -33,8 +33,8 @@ function Skills() {
 				<CategoryTitle>SKILLS</CategoryTitle>
 				<SkillItems>
 					{logoImages.result.map((data, index) =>
-						<Logo {...{
-							key: index,
+						<Logo key={index} {...{
+							index: index,
 							url: data.url,
 							info: data.info,
 							flag: "skill"
