@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { MaxWidthDiv } from "../Styles/maxWidth";
-import { CategoryTitle } from "../Styles/title";
+import { MaxWidthDiv } from "../Styles/MaxWidth";
+import { CategoryTitle } from "../Styles/Title";
 import ProjectItem from "./ProjectItem";
 import { projectData } from "../Model/projectData";
 

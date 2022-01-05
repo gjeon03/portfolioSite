@@ -3,11 +3,11 @@ import AboutMe from "../Components/AboutMe";
 import Skills from "../Components/Skills";
 import Projects from "../Components/Projects";
 import { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
 import { useMatch } from "react-router";
 import BicSizeImage from "../Components/BicSizeImage";
 import HeaderSize from "../Components/HeaderSize";
 import Archiving from "../Components/Archiving";
+import Detail from "../Components/Detail";
 
 interface IPropsRef {
 	aboutMeRef?: React.RefObject<HTMLDivElement>,
@@ -31,6 +31,7 @@ function Portfolio() {
 		})
 	}, [aboutMeRef, archivingRef, skillsRef, projectsRef]);
 	const bicImageMatch = useMatch("/image");
+	const detailMatch = useMatch("/detail/:id");
 	return (
 		<>
 			<Header {...refs} />
@@ -51,6 +52,9 @@ function Portfolio() {
 			</div>
 			{bicImageMatch ? (
 				<BicSizeImage />
+			) : null}
+			{detailMatch ? (
+				<Detail />
 			) : null}
 		</>
 	);

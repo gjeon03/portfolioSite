@@ -45,7 +45,7 @@ export const itemVariants = {
 		scale: 1.4,
 		y: -20,
 		transition: {
-			delay: 0.5,
+			delay: 0.3,
 			duaration: 0.1,
 			type: "tween",
 		},
@@ -56,7 +56,7 @@ export const infoVariants = {
 	hover: {
 		opacity: 1,
 		transition: {
-			delay: 0.5,
+			delay: 0.3,
 			duaration: 0.1,
 			type: "tween",
 		},

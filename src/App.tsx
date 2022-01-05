@@ -8,6 +8,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/image" element={<Portfolio />} />
+        <Route path="/detail/:id" element={<Portfolio />} />
         <Route path="/" element={<Portfolio />} />
       </Routes>
       <Footer />

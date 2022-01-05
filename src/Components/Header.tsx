@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { motion, useAnimation, useViewportScroll } from "framer-motion";
 import { useEffect } from "react";
-import { MaxWidthDiv } from "../Styles/maxWidth";
+import { MaxWidthDiv } from "../Styles/MaxWidth";
 
 const Nav = styled(motion.nav)`
 	width: 100%;
 	position: fixed;
-	z-index: 100;
+	z-index: 200;
 	color: white;
 `;
 const NavArea = styled(MaxWidthDiv)`

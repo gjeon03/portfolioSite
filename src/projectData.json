@@ -22,7 +22,7 @@
 			"img":""
 		},
 		{
-			"id":1,
+			"id":2,
 			"name":"COVID-19 chart",
 			"description":"코로나가 성행하는 이 시기에 관련 데이터를 통해 현 상황을 살펴볼 수 있는 리액트 웹앱을 만들어보고 싶어 제작하게 되었습니다.",
 			"skills":[
@@ -37,9 +37,9 @@
 			"img":""
 		},
 		{
-			"id":1,
+			"id":3,
 			"name":"KimchiFlix",
-			"description":"framer-motion 모듈을 통해 다양한 애니메이션 이용해 보는것을 중점으로 만들었습니다.",
+			"description":"framer-motion 라이브러리를 통해 다양한 애니메이션 이용해 보는것을 중점으로 만들었습니다.",
 			"skills":[
 				"React",
 				"TypeScript",
@@ -48,6 +48,20 @@
 			"link":{
 				"site":"https://gjeon03.github.io/kimchiflix",
 				"github":"https://github.com/gjeon03/covid19_chart"
+			},
+			"img":""
+		},
+		{
+			"id":4,
+			"name":"JGY`s Portfolio",
+			"description":"React와 TypeScript를 공부며 배운것들을 최대한 이용하고 반응형웹을 생각하며 만들었습니다.",
+			"skills":[
+				"React",
+				"TypeScript"
+			],
+			"link":{
+				"site":"https://gjeon03.github.io/portfolioSite",
+				"github":"https://github.com/gjeon03/portfolioSite"
 			},
 			"img":""
 		}

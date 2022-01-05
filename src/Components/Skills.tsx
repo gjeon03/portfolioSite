@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { MaxWidthDiv } from "../Styles/maxWidth";
-import { CategoryTitle } from "../Styles/title";
+import { MaxWidthDiv } from "../Styles/MaxWidth";
+import { CategoryTitle } from "../Styles/Title";
 import { logoImages } from "../Util/skillLogo";
 import Logo from "./Logo";
-import { LogoBox } from "../Styles/logoBox";
+import { LogoBox } from "../Styles/LogoBox";
 
 const Contaner = styled(motion.div)`
 	width: 100%;

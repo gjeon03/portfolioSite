@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import styled from "styled-components";
 
 const Area = styled.div`
@@ -17,17 +18,36 @@ const AreaCol = styled.div`
 	width: 100%;
 	height: 100%;
 `;
-const ImageBox = styled.div`
+const ImageBox = styled(motion.div)`
 	width: 100%;
 	height: 100%;
 	padding: 60px 0;
-	background-color: #E6CBBB;
+	background-color: #BFBFBF;
 	border-radius: 20px;
+	position: relative;
+	cursor: pointer;
+	z-index: 100;
 `;
 const Image = styled.img`
 	width: 100%;
 	height: 100%;
 	background-color: yellowgreen;
+`;
+const MoveOverlay = styled(motion.div)`
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	border-radius: 20px;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+`;
+const MovoIcon = styled.span`
+	font-size: 40px;
+	color: white;
 `;
 const ProjectContents = styled.div`
 	width: 100%;
@@ -92,14 +112,30 @@ interface IProps {
 	img: string
 }
 
+const movoVariants = {
+	hover: {
+		opacity: 1,
+		transition: {
+			delay: 0.3,
+			duaration: 0.1,
+			type: "tween",
+		},
+	},
+}
+
 function ProjectItem({ ...data }: IProps) {
+	const navigate = useNavigate();
 	const onSiteClick = () => window.open(data.link.site, "_blank");
 	const onGithubClick = () => window.open(data.link.github, "_blank");
+	const onMovoClick = () => navigate(`/detail/${data.id}`);
 	return (
 		<Area>
 			<AreaCol>
-				<ImageBox>
+				<ImageBox layoutId={`detail${data.id}`} onClick={onMovoClick}>
 					<Image src={data.img} />
+					<MoveOverlay variants={movoVariants} whileHover="hover">
+						<MovoIcon>Click</MovoIcon>
+					</MoveOverlay>
 				</ImageBox>
 			</AreaCol>
 			<AreaCol>
