@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { MaxWidthDiv } from "../Styles/maxWidth";
 import { CategoryTitle } from "../Styles/title";
-import githubImage from "../Images/github.png";
+import githubImage from "../Images/logo/github.png";
 import Logo from "./Logo";
 import {
 	Item,

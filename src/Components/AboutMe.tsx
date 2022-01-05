@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
-import gjeonImage from "../Images/gjeon.jpg";
+import gjeonImage from "../Images/profile/gjeon.jpg";
 import { MaxWidthDiv } from "../Styles/maxWidth";
 import { CategoryTitle } from "../Styles/title";
-import bgImage from "../Images/bg.jpeg";
+import bgImage from "../Images/profile/bg.jpeg";
 
 const Contaner = styled.div`
 	width: 100%;

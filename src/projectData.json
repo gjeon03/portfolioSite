@@ -1,0 +1,55 @@
+{
+	"result": [
+		{
+			"id":1,
+			"name":"중고 경매 사이트",
+			"description":"중고 물품 경매 사이트가 있으면 좋겠다고 생각이 들어 만들게 되었습니다.",
+			"skills":[
+				"Node",
+				"JavaScript",
+				"MongoDB",
+				"Pug",
+				"Express",
+				"Sass",
+				"Babel",
+				"Webpack",
+				"AWS S3"
+			],
+			"link":{
+				"site":"https://used-auction.herokuapp.com",
+				"github":"https://github.com/gjeon03/used_auction"
+			},
+			"img":""
+		},
+		{
+			"id":1,
+			"name":"COVID-19 chart",
+			"description":"코로나가 성행하는 이 시기에 관련 데이터를 통해 현 상황을 살펴볼 수 있는 리액트 웹앱을 만들어보고 싶어 제작하게 되었습니다.",
+			"skills":[
+				"React",
+				"TypeScript",
+				"Api"
+			],
+			"link":{
+				"site":"https://gjeon03.github.io/covid19_chart",
+				"github":"https://github.com/gjeon03/kimchiflix"
+			},
+			"img":""
+		},
+		{
+			"id":1,
+			"name":"KimchiFlix",
+			"description":"framer-motion 모듈을 통해 다양한 애니메이션 이용해 보는것을 중점으로 만들었습니다.",
+			"skills":[
+				"React",
+				"TypeScript",
+				"Api"
+			],
+			"link":{
+				"site":"https://gjeon03.github.io/kimchiflix",
+				"github":"https://github.com/gjeon03/covid19_chart"
+			},
+			"img":""
+		}
+	]
+}

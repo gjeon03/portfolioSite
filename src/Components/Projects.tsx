@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { MaxWidthDiv } from "../Styles/maxWidth";
 import { CategoryTitle } from "../Styles/title";
 import ProjectItem from "./ProjectItem";
+import { projectData } from "../Model/projectData";
 
 const Contaner = styled.div`
 	width: 100%;
@@ -24,14 +25,15 @@ const ProjectArea = styled.div`
 `;
 
 function Projects() {
+	const datas = projectData();
 	return (
 		<Contaner>
 			<ProjectBox>
 				<CategoryTitle>PROJECTS</CategoryTitle>
 				<ProjectArea>
-					<ProjectItem />
-					<ProjectItem />
-					<ProjectItem />
+					{datas.result.map((data, index) =>
+						<ProjectItem key={index} {...data} />
+					)}
 				</ProjectArea>
 			</ProjectBox>
 		</Contaner>

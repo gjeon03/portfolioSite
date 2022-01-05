@@ -1,10 +1,9 @@
 # Portfolio Site
 
 - Header[o]
-- About Me[]
-  - Profile[o]
-  - Introduction[]
-  - Contact & Channel[]
-- Skills[]
+- Profile[o]
+- About Me[o]
+- Archiving[o]
+- Skills[o]
 - Projects[]
-- Footer[]
+- Footer[o]

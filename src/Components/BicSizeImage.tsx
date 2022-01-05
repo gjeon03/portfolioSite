@@ -1,7 +1,7 @@
 import { motion, useViewportScroll } from "framer-motion";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import gjeonImage from "../Images/gjeon.jpg";
+import gjeonImage from "../Images/profile/gjeon.jpg";
 
 const Overlay = styled(motion.div)`
 	position: fixed;
