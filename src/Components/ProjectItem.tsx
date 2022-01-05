@@ -18,7 +18,7 @@ const AreaCol = styled.div`
 	width: 100%;
 	height: 100%;
 `;
-const ImageBox = styled(motion.div)`
+const ImageBox = styled(motion.div) <{ zindex: number }>`
 	width: 100%;
 	height: 100%;
 	padding: 60px 0;
@@ -26,7 +26,7 @@ const ImageBox = styled(motion.div)`
 	border-radius: 20px;
 	position: relative;
 	cursor: pointer;
-	z-index: 100;
+	z-index: ${props => props.zindex};
 `;
 const Image = styled.img`
 	width: 100%;
@@ -125,13 +125,25 @@ const movoVariants = {
 
 function ProjectItem({ ...data }: IProps) {
 	const navigate = useNavigate();
+	const [zIndex, setZIndex] = useState(100);
 	const onSiteClick = () => window.open(data.link.site, "_blank");
 	const onGithubClick = () => window.open(data.link.github, "_blank");
-	const onMovoClick = () => navigate(`/detail/${data.id}`);
+	const onMovoClick = () => {
+		setZIndex(200);
+		return navigate(`/detail/${data.id}`);
+	};
+	const layoutComplateHandler = () => {
+		setZIndex(100);
+	}
 	return (
 		<Area>
 			<AreaCol>
-				<ImageBox layoutId={`detail${data.id}`} onClick={onMovoClick}>
+				<ImageBox
+					onLayoutAnimationComplete={layoutComplateHandler}
+					layoutId={`detail${data.id}`}
+					zindex={zIndex}
+					onClick={onMovoClick}
+				>
 					<Image src={data.img} />
 					<MoveOverlay variants={movoVariants} whileHover="hover">
 						<MovoIcon>Click</MovoIcon>
