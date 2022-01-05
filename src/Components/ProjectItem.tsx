@@ -22,7 +22,7 @@ const ImageBox = styled(motion.div) <{ zindex: number }>`
 	width: 100%;
 	height: 100%;
 	padding: 60px 0;
-	background-color: #BFBFBF;
+	background-color: ${props => props.theme.projects};
 	border-radius: 20px;
 	position: relative;
 	cursor: pointer;

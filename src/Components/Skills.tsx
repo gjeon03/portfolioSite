@@ -9,7 +9,7 @@ import { LogoBox } from "../Styles/LogoBox";
 const Contaner = styled(motion.div)`
 	width: 100%;
 	height: auto;
-	background-color: #ff9651;
+	background-color: ${props => props.theme.skills};
 	padding: 15px 0;
 `;
 const SkillBox = styled(MaxWidthDiv)`

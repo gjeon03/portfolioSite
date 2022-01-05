@@ -56,7 +56,7 @@ const ProfileImage = styled(motion.div) <{ bgphoto: string }>`
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
 const AboutBox = styled.div`
-	background-color: #eacebe;
+	background-color: ${props => props.theme.aboutMe};
 `;
 const AboutMeContents = styled(MaxWidthDiv)`
 	width: 100%;

@@ -15,7 +15,7 @@ import { LogoBox } from "../Styles/LogoBox";
 const Container = styled.div`
 	width: 100%;
 	height: auto;
-	background-color: white;
+	background-color: ${props => props.theme.archiving};
 	padding: 15px 0;
 `;
 const ArchivingBox = styled(MaxWidthDiv)`

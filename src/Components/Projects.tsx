@@ -9,7 +9,7 @@ const Contaner = styled.div`
 	width: 100%;
 	height: auto;
 	padding: 15px 0 50px;
-	background-color: #bfbfbf;
+	background-color: ${props => props.theme.projects};
 `;
 const ProjectBox = styled(MaxWidthDiv)`
 	width: 100%;
