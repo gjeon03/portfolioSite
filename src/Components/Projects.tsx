@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { MaxWidthDiv } from "../Styles/MaxWidth";
 import { CategoryTitle } from "../Styles/Title";
 import ProjectItem from "./ProjectItem";
-import { projectData } from "../Model/projectData";
+import { projectData } from "../Model/projectInfo/projectData";
 
 const Contaner = styled.div`
 	width: 100%;

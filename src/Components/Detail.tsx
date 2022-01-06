@@ -2,6 +2,7 @@ import { AnimatePresence, motion, useViewportScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import styled from "styled-components";
+import { auctionData } from "../Model/projects/usedAuction/auctionData";
 
 const Overlay = styled(motion.div)`
 	position: fixed;
@@ -31,14 +32,28 @@ const DetailContainer = styled(motion.div)`
 const CloseBox = styled.div`
 	width: 100%;
 	display: flex;
-	justify-content: end;
+	justify-content: space-between;
 `;
+const PageNumber = styled.span``;
 const Close = styled(motion.svg)`
 	width: 40px;
 	margin: 10px;
 	cursor: pointer;
+	:hover{
+		color: ${props => props.theme.skills};
+	}
 `;
-const Contents = styled(motion.div)``;
+const ContentsBox = styled.div`
+	width: 100%;
+	height: 100%;
+	position: relative;
+`;
+const Contents = styled(motion.div)`
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	position: absolute;
+`;
 const PageBox = styled.div`
 	width: 100%;
 `;
@@ -74,6 +89,21 @@ const Btn = styled(motion.div)`
 	user-select: none;
 `;
 
+//Center Contents
+const ImageBox = styled.div`
+	width: 100%;
+	height: 70%;
+`;
+const Image = styled.img`
+	width: 100%;
+	height: auto;
+	border: 1px solid ${props => props.theme.skills};
+	pointer-events: none;
+`;
+const DesBox = styled.div``;
+const DesTitle = styled.span``;
+const Des = styled.span``;
+
 const variants = {
 	enter: (direction: number) => {
 		return {
@@ -99,7 +129,6 @@ const moveBtn = {
 	hover: {
 		scale: 1.1,
 		color: "#FF9651",
-		border: "1px solid #FF9651",
 		transition: {
 			delay: 0,
 			duaration: 0.1,
@@ -108,28 +137,41 @@ const moveBtn = {
 	}
 }
 
+interface IData {
+	id: number;
+	page: {
+		currentPage: number,
+		title: string,
+		des: string[],
+		image: string
+	}[]
+}
+
 function Detail() {
 	const id = useLocation().pathname.split("/")[2];
 	const { scrollY } = useViewportScroll();
 	const navigate = useNavigate();
 	const onOverlayClick = () => navigate("/");
 	const [[page, direction], setPage] = useState([0, 0]);
-	const [pageArray, setPageArray] = useState<number[]>([]);
-	const pageLen = 6;
+	const [pageData, setPageData] = useState<IData>();
 	useEffect(() => {
-		setPageArray([]);
-		for (let i = 0; i < pageLen; i++) {
-			setPageArray((old) => [...old, i]);
+		const auctionDatas = auctionData();
+		if (auctionDatas.id === +id) {
+			setPageData(auctionDatas);
 		}
 	}, []);
 	const paginate = (newDirection: number) => {
-		if (pageLen as number - 1 < page + newDirection) {
+		if (pageData?.page.length as number - 1 < page + newDirection) {
 			setPage([0, newDirection]);
 		} else if (0 > page + newDirection) {
-			setPage([pageLen as number - 1, newDirection]);
+			setPage([pageData?.page.length as number - 1, newDirection]);
 		} else {
 			setPage([page + newDirection, newDirection]);
 		}
+	};
+	const swipeConfidenceThreshold = 10000;
+	const swipePower = (offset: number, velocity: number) => {
+		return Math.abs(offset) * velocity;
 	};
 	return (
 		<>
@@ -141,9 +183,10 @@ function Detail() {
 			/>
 			<DetailContainer
 				layoutId={`detail${id}`}
-				style={{ top: scrollY.get() + 50 }}
+				style={{ top: scrollY.get() }}
 			>
 				<CloseBox>
+					<PageNumber>{page + 1}</PageNumber>
 					<Close
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 512 512"
@@ -153,37 +196,61 @@ function Detail() {
 						<motion.path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z" />
 					</Close>
 				</CloseBox>
-				<AnimatePresence initial={false} custom={direction}>
-					<Contents
-						key={page}
-						custom={direction}
-						variants={variants}
-						initial="enter"
-						animate="center"
-						exit="exit"
-						transition={{
-							x: { type: "tween", stiffness: 300, damping: 30 },
-							opacity: { duration: 0.2 }
-						}}
-					>
-						<span>hello</span>
-					</Contents>
-				</AnimatePresence>
+				<ContentsBox>
+					<AnimatePresence initial={false} custom={direction}>
+						<Contents
+							key={page}
+							custom={direction}
+							variants={variants}
+							initial="enter"
+							animate="center"
+							exit="exit"
+							transition={{
+								x: { type: "tween", stiffness: 300, damping: 30 },
+								opacity: { duration: 0.2 }
+							}}
+							drag="x"
+							dragConstraints={{ left: 0, right: 0 }}
+							dragElastic={1}
+							onDragEnd={(e, { offset, velocity }) => {
+								const swipe = swipePower(offset.x, velocity.x);
+
+								if (swipe < -swipeConfidenceThreshold) {
+									paginate(1);
+								} else if (swipe > swipeConfidenceThreshold) {
+									paginate(-1);
+								}
+							}}
+						>
+							<ImageBox>
+								<Image src={pageData?.page[page].image} />
+							</ImageBox>
+							<DesBox>
+								<DesTitle>{pageData?.page[page].title}</DesTitle>
+								{pageData?.page[page].des.map((des, index) =>
+									<Des key={index}>{des}</Des>
+								)}
+							</DesBox>
+						</Contents>
+					</AnimatePresence>
+				</ContentsBox>
 				<PageBox>
 					<PageLocationBox>
-						{pageArray.map((data, index) => {
-							if (page === index) {
-								return <PageLocation
-									key={index}
-									{...{ bgcolor: "#FF9651" }}
-								/>
-							} else {
-								return <PageLocation
-									key={index}
-									{...{ bgcolor: "#BFBFBF" }}
-								/>
-							}
-						})}
+						{pageData?.id === +id ?
+							pageData.page.map((data, index) => {
+								if (page === index) {
+									return <PageLocation
+										key={index}
+										{...{ bgcolor: "#FF9651" }}
+									/>
+								} else {
+									return <PageLocation
+										key={index}
+										{...{ bgcolor: "#BFBFBF" }}
+									/>
+								}
+							})
+							: null}
 					</PageLocationBox>
 					<BtnBox>
 						<Btn

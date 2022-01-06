@@ -1,0 +1,88 @@
+{
+	"id": 1,
+	"page": [
+		{
+			"currentPage": 1,
+			"title":"메인 화면",
+			"des":[
+				"로그인은 사용자가 입력한 값을 DB에서 비교해 일치하면 session에 사용자 정보를 저장합니다. 비밀번호를 비교할 땐 사용자가 입력한 값과 해시 값으로 저장된 비밀번호를 BCrypt를 사용해 비교했습니다.",
+				"돋보기를 클릭하면 검색창이 뜨면서 검색을 할수있고 카테고리별 검색도 가능합니다.",
+				"각 제품들의 남은 시간은 초가 계속 변하도록 해놨습니다. 시간이 0이 되면 sold out으로 변합니다.",
+				"정렬에 해당하는 버튼을 누를 때 마다 그에 맞게 정렬이 되며, 정렬은 mongoose의 sort 함수를 사용했습니다."
+			],
+			"image":""
+		},
+		{
+			"currentPage": 2,
+			"title":"로그인",
+			"des":[
+				""
+			],
+			"image":""
+		},
+		{
+			"currentPage": 3,
+			"title":"회원가입",
+			"des":[
+				""
+			],
+			"image":""
+		},
+		{
+			"currentPage": 4,
+			"title":"개인정보 수정",
+			"des":[
+				""
+			],
+			"image":""
+		},
+		{
+			"currentPage": 5,
+			"title":"프로필",
+			"des":[
+				""
+			],
+			"image":""
+		},
+		{
+			"currentPage": 6,
+			"title":"제품 판매",
+			"des":[
+				""
+			],
+			"image":""
+		},
+		{
+			"currentPage": 7,
+			"title":"제품",
+			"des":[
+				""
+			],
+			"image":""
+		},
+		{
+			"currentPage": 8,
+			"title":"제품 판매 수정",
+			"des":[
+				""
+			],
+			"image":""
+		},
+		{
+			"currentPage": 9,
+			"title":"댓글",
+			"des":[
+				""
+			],
+			"image":""
+		},
+		{
+			"currentPage": 10,
+			"title":"구매내역",
+			"des":[
+				""
+			],
+			"image":""
+		}
+	]
+}
