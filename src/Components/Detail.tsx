@@ -15,7 +15,7 @@ const Overlay = styled(motion.div)`
 `;
 const DetailContainer = styled(motion.div)`
 	width: 100%;
-	height: 800px;
+	height: 100vh;
 	max-width: 1200px;
 	position: absolute;
 	left: 0;
@@ -34,7 +34,11 @@ const CloseBox = styled.div`
 	display: flex;
 	justify-content: space-between;
 `;
-const PageNumber = styled.span``;
+const PageNumber = styled.span`
+	height: 100%;
+	font-size: 30px;
+	padding: 20px 0 0 20px;
+`;
 const Close = styled(motion.svg)`
 	width: 40px;
 	margin: 10px;
@@ -70,6 +74,7 @@ const PageLocation = styled.div<{ bgcolor: string }>`
 	height: 10px;
 	border-radius: 50%;
 	background-color: ${props => props.bgcolor};
+	cursor: pointer;
 `;
 const BtnBox = styled.div`
 	display: flex;
@@ -92,7 +97,7 @@ const Btn = styled(motion.div)`
 //Center Contents
 const ImageBox = styled.div`
 	width: 100%;
-	height: 70%;
+	height: auto;
 `;
 const Image = styled.img`
 	width: 100%;
@@ -100,9 +105,18 @@ const Image = styled.img`
 	border: 1px solid ${props => props.theme.skills};
 	pointer-events: none;
 `;
-const DesBox = styled.div``;
-const DesTitle = styled.span``;
-const Des = styled.span``;
+const DesBox = styled.div`
+	display: flex;
+	flex-direction: column;
+`;
+const DesTitle = styled.span`
+	font-size: 20px;
+	font-weight: 600;
+	padding: 10px 0;
+`;
+const Des = styled.span`
+	margin-bottom: 3px;
+`;
 
 const variants = {
 	enter: (direction: number) => {
@@ -173,6 +187,9 @@ function Detail() {
 	const swipePower = (offset: number, velocity: number) => {
 		return Math.abs(offset) * velocity;
 	};
+	const onPageLocationClick = (index: number) => {
+		setPage([index, index - page]);
+	};
 	return (
 		<>
 			<Overlay
@@ -186,7 +203,7 @@ function Detail() {
 				style={{ top: scrollY.get() }}
 			>
 				<CloseBox>
-					<PageNumber>{page + 1}</PageNumber>
+					<PageNumber>{`No.${pageData?.page[page].currentPage}`}</PageNumber>
 					<Close
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 512 512"
@@ -228,7 +245,7 @@ function Detail() {
 							<DesBox>
 								<DesTitle>{pageData?.page[page].title}</DesTitle>
 								{pageData?.page[page].des.map((des, index) =>
-									<Des key={index}>{des}</Des>
+									<Des key={index}>{`${index + 1}) ${des}`}</Des>
 								)}
 							</DesBox>
 						</Contents>
@@ -238,17 +255,15 @@ function Detail() {
 					<PageLocationBox>
 						{pageData?.id === +id ?
 							pageData.page.map((data, index) => {
+								let bgcolor = "#BFBFBF";
 								if (page === index) {
-									return <PageLocation
-										key={index}
-										{...{ bgcolor: "#FF9651" }}
-									/>
-								} else {
-									return <PageLocation
-										key={index}
-										{...{ bgcolor: "#BFBFBF" }}
-									/>
+									bgcolor = "#FF9651";
 								}
+								return <PageLocation
+									key={index}
+									{...{ bgcolor }}
+									onClick={() => onPageLocationClick(index)}
+								/>
 							})
 							: null}
 					</PageLocationBox>

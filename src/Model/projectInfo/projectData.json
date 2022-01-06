@@ -39,7 +39,7 @@
 		{
 			"id":3,
 			"name":"KimchiFlix",
-			"description":"framer-motion 라이브러리를 통해 다양한 애니메이션 이용해 보는것을 중점으로 만들었습니다.",
+			"description":"framer-motion 라이브러리를 통해 다양한 애니메이션 활용해 보는것을 중점으로 만들었습니다.",
 			"skills":[
 				"React",
 				"TypeScript",
