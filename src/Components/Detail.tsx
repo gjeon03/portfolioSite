@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { auctionData } from "../Model/projects/usedAuction/auctionData";
 import { covidData } from "../Model/projects/covid19/covidData";
 import { flixData } from "../Model/projects/kimchiFlix/flix";
-import { profileData } from "../Model/projects/profile/profile";
+import { portfolioData } from "../Model/projects/portfolio/portfolio";
 
 const Overlay = styled(motion.div)`
 	position: fixed;
@@ -177,12 +177,12 @@ function Detail() {
 		const auctionDatas = auctionData();
 		const covidDatas = covidData();
 		const flixDatas = flixData();
-		const profileDatas = profileData();
+		const portfolioDatas = portfolioData();
 		if (auctionDatas.id === +id) setPageData(auctionDatas);
 		else if (covidDatas.id === +id) setPageData(covidDatas);
 		else if (flixDatas.id === +id) setPageData(flixDatas);
-		else if (profileDatas.id === +id) setPageData(profileDatas);
-	}, []);
+		else if (portfolioDatas.id === +id) setPageData(portfolioDatas);
+	}, [id]);
 	const paginate = (newDirection: number) => {
 		if (pageData?.page.length as number - 1 < page + newDirection) {
 			setPage([0, newDirection]);

@@ -83,8 +83,6 @@ const AboutMeInfo = styled.div`
 function AboutMe() {
 	const navigate = useNavigate();
 	const onImageClicked = () => navigate("image");
-	const onBlogClick = () => window.open("https://velog.io/@dev_space", "_blank");
-	const onGitHubClick = () => window.open("https://github.com/gjeon03", "_blank");
 	return (
 		<Contaner>
 			<Profile bgphoto={bgImage}>
