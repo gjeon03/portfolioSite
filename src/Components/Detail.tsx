@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import styled from "styled-components";
 import { auctionData } from "../Model/projects/usedAuction/auctionData";
+import { covidData } from "../Model/projects/covid19/covidData";
+import { flixData } from "../Model/projects/kimchiFlix/flix";
+import { profileData } from "../Model/projects/profile/profile";
 
 const Overlay = styled(motion.div)`
 	position: fixed;
@@ -17,6 +20,7 @@ const DetailContainer = styled(motion.div)`
 	width: 100%;
 	height: 100vh;
 	max-width: 1200px;
+	min-height: 800px;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -102,6 +106,7 @@ const ImageBox = styled.div`
 const Image = styled.img`
 	width: 100%;
 	height: auto;
+	max-height: 450px;
 	border: 1px solid ${props => props.theme.skills};
 	pointer-events: none;
 `;
@@ -170,9 +175,13 @@ function Detail() {
 	const [pageData, setPageData] = useState<IData>();
 	useEffect(() => {
 		const auctionDatas = auctionData();
-		if (auctionDatas.id === +id) {
-			setPageData(auctionDatas);
-		}
+		const covidDatas = covidData();
+		const flixDatas = flixData();
+		const profileDatas = profileData();
+		if (auctionDatas.id === +id) setPageData(auctionDatas);
+		else if (covidDatas.id === +id) setPageData(covidDatas);
+		else if (flixDatas.id === +id) setPageData(flixDatas);
+		else if (profileDatas.id === +id) setPageData(profileDatas);
 	}, []);
 	const paginate = (newDirection: number) => {
 		if (pageData?.page.length as number - 1 < page + newDirection) {

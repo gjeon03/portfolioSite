@@ -11,16 +11,16 @@ import comentsImage from "../../../Images/projects/usedAuctionImage/coments.jpeg
 import bidImage from "../../../Images/projects/usedAuctionImage/bid.jpeg";
 
 export const auctionData = () => {
-	const products = data;
-	products.page[0].image = mainImage;
-	products.page[1].image = loginImage;
-	products.page[2].image = joinImage;
-	products.page[3].image = editImage;
-	products.page[4].image = profileImage;
-	products.page[5].image = p_uploadImage;
-	products.page[6].image = productImage;
-	products.page[7].image = p_editImage;
-	products.page[8].image = comentsImage;
-	products.page[9].image = bidImage;
-	return products;
+	const result = data;
+	result.page[0].image = mainImage;
+	result.page[1].image = loginImage;
+	result.page[2].image = joinImage;
+	result.page[3].image = editImage;
+	result.page[4].image = profileImage;
+	result.page[5].image = p_uploadImage;
+	result.page[6].image = productImage;
+	result.page[7].image = p_editImage;
+	result.page[8].image = comentsImage;
+	result.page[9].image = bidImage;
+	return result;
 };

@@ -1,0 +1,21 @@
+{
+	"id": 4,
+	"page": [
+		{
+			"currentPage": 1,
+			"title":"메인 화면",
+			"des":[
+				"메인 화면입니다."
+			],
+			"image":""
+		},
+		{
+			"currentPage": 2,
+			"title":"모바일 화면",
+			"des":[
+				""
+			],
+			"image":""
+		}
+	]
+}

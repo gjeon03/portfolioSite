@@ -1,0 +1,53 @@
+{
+	"id": 2,
+	"page": [
+		{
+			"currentPage": 1,
+			"title":"메인 화면",
+			"des":[
+				"메인 화면입니다."
+			],
+			"image":""
+		},
+		{
+			"currentPage": 2,
+			"title":"국내(Black)",
+			"des":[
+				"국내 전체 코로나 확진자 데이터를 api에서 비동기로 불러와 react-apexcharts 라이브러리를 사용하여 차트를 나타내었습니다."
+			],
+			"image":""
+		},
+		{
+			"currentPage": 3,
+			"title":"시•도(Black)",
+			"des":[
+				"국내 도시별 코로나 확진자 데이터를 api에서 비동기로 불러와 차트를 재사용하여 나타내었습니다."
+			],
+			"image":""
+		},
+		{
+			"currentPage": 4,
+			"title":"지역 선택",
+			"des":[
+				"원하는 도시의 확진자 현황을 알 수 있습니다."
+			],
+			"image":""
+		},
+		{
+			"currentPage": 5,
+			"title":"국내(White)",
+			"des":[
+				"상태관리 라이브러리인 recoil을 사용하여 토글버튼 클릭시 화면 모드전환이 되게 하였습니다."
+			],
+			"image":""
+		},
+		{
+			"currentPage": 6,
+			"title":"시•도(White)",
+			"des":[
+				"시•도 화면 White 모드입니다."
+			],
+			"image":""
+		}
+	]
+}
