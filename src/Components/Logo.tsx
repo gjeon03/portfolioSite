@@ -16,6 +16,7 @@ export const Item = styled(motion.div)`
 const Image = styled(motion.div) <{ logo: string }>`
 	width: 100%;
 	height: 100%;
+	border-radius: 50%;
 	background-image: url(${props => props.logo});
 	background-size: 100% 100%;
 `;
@@ -74,6 +75,8 @@ function Logo({ index, url, info, flag }: IProps) {
 	const onItemClick = () => {
 		if (flag === "github") {
 			window.open("https://github.com/gjeon03", "_blank");
+		} else if (flag === "notion") {
+			window.open("https://gainful-trilby-a8b.notion.site/JGY-s-7bbc4afc042146aa837486c85f44614a", "_blank");
 		}
 	}
 	return (

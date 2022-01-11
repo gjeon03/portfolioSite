@@ -79,6 +79,18 @@ const AboutMeInfo = styled.div`
 		padding-bottom: 5px;
 	}
 `;
+const OngoingCurriculum = styled.div`
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+	span:first-child {
+		font-size: 20px;
+		font-weight: 600;
+	}
+	span:last-child {
+		margin-top: 5px;
+	}
+`;
 
 function AboutMe() {
 	const navigate = useNavigate();
@@ -105,6 +117,10 @@ function AboutMe() {
 						<span>• 트렌드를 추구하고 공유하며, 어제보다 나은 개발자가 되는것이 목표입니다.</span>
 						<span>• 항상 왜?에 대해 생각하고 이유를 찾고자합니다.</span>
 						<span>• 배움을 멈추지 않으며 저에게 새로운 프로젝트는 또 다른 모험입니다.</span>
+						<OngoingCurriculum>
+							<span>#진행중인 교육 프로그램</span>
+							<span>• 42Seoul</span>
+						</OngoingCurriculum>
 					</AboutMeInfo>
 				</AboutMeContents>
 			</AboutBox>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { MaxWidthDiv } from "../Styles/MaxWidth";
 import { CategoryTitle } from "../Styles/Title";
 import githubImage from "../Images/logo/github.png";
+import notionImage from "../Images/logo/notion.png";
 import Logo from "./Logo";
 import {
 	Item,
@@ -47,6 +48,11 @@ function Archiving() {
 			<ArchivingBox>
 				<CategoryTitle>ARCHIVING</CategoryTitle>
 				<ArchivingItems>
+					<Logo {...{
+						url: githubImage,
+						info: "Move on Click",
+						flag: "github"
+					}} />
 					<Item
 						whileHover="hover"
 						initial="normal"
@@ -61,9 +67,9 @@ function Archiving() {
 						</LogoInfo>
 					</Item>
 					<Logo {...{
-						url: githubImage,
+						url: notionImage,
 						info: "Move on Click",
-						flag: "github"
+						flag: "notion"
 					}} />
 				</ArchivingItems>
 			</ArchivingBox>
