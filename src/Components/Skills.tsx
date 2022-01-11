@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { MaxWidthDiv } from "../Styles/MaxWidth";
 import { CategoryTitle } from "../Styles/Title";
-import { logoImages } from "../Util/skillLogo";
+import { logoImages } from "../Model/logo/skillLogo";
 import Logo from "./Logo";
 import { LogoBox } from "../Styles/LogoBox";
 

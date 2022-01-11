@@ -130,8 +130,8 @@ function AboutMe() {
 							<EducationInfoBox>
 								<EducationInfoTitle>42Seoul</EducationInfoTitle>
 								<EducationInfoDes>
-									<span>• C언어를 이용한 로우레벨 개발</span>
-									<span>• 프로젝트 과제 기반의 코드리뷰 중심</span>
+									<span>• 프로젝트형 과제를 코드, 기술로 해결하는 방식</span>
+									<span>• 2년동안 자유롭게 동료와 협력하여 문제 해결</span>
 								</EducationInfoDes>
 								<div />
 							</EducationInfoBox>
