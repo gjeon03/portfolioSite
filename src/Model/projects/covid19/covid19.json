@@ -37,7 +37,7 @@
 			"currentPage": 5,
 			"title":"국내(White)",
 			"des":[
-				"상태관리 라이브러리인 recoil을 사용하여 토글버튼 클릭시 화면 모드전환이 되게 하였습니다."
+				"상태관리 라이브러리인 recoil과 Styled-components의 ThemeProvider를 같이 사용하여 Dark & White 모드를 구현하였습니다."
 			],
 			"image":""
 		},
