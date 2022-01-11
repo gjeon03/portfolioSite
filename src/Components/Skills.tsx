@@ -18,10 +18,7 @@ const SkillBox = styled(MaxWidthDiv)`
 	flex-direction: column;
 `;
 const SkillItems = styled(LogoBox)`
-	div:nth-child(1){
-		padding: 10px;
-	}
-	div:not(div:nth-child(1)){
+	div {
 		padding: 5px;
 	}
 `;
