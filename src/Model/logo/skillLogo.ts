@@ -8,6 +8,7 @@ import mongodb from "../../Images/logo/mongodb.png";
 import sass from "../../Images/logo/sass.png";
 import webpack from "../../Images/logo/webpack.png";
 import aws from "../../Images/logo/aws.png";
+import c_language from "../../Images/logo/c.png";
 
 
 export const logoImages = {
@@ -22,5 +23,6 @@ export const logoImages = {
 		{url: sass, info: "Scss"},
 		{url: webpack, info: "Webpack"},
 		{url: aws, info: "AWS S3"},
+		{url: c_language, info: "C"},
 	]
 };
