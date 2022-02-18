@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const Area = styled.div`
 	width: 100%;
-	min-height: 400px;
+	height: auto;
 	background-color: white;
 	border-radius: 20px;
 	display: grid;
